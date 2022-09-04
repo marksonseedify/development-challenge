@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html,
+  body {
+    font-family: 'rajdhani', sans-serif;
+    height: 100%;
+  }
+
+  .text-inherit {
+    color: inherit !important;
+  }
+
+  .app {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #1E1E1E;
+    background-image: url('assets/images/right-bg-shadow.svg'), url('assets/images/left-bg-shadow.svg');
+    background-position: 100% 6%, 0 50%;
+    background-repeat: no-repeat, no-repeat;
+
+    .left-shadow {
+      position: absolute;
+      width: 2049.02px;
+      left: -80%;
+      top: -500px;
+      z-index: 1;
+      opacity: 0.7;
+      transform: rotate(300.82deg);
+    }
+
+    .right-shadow {
+      position: absolute;
+      width: 2049.02px;
+      right: -500px;
+      top: 0;
+      z-index: 1;
+      opacity: 0.7;
+    }
+  }
+
+  input{
+    height: 50px;
+    width: 274px;
+    padding: 5px;
+    border-radius: 0px;
+    outline: none;
+    color: white;
+    font-size: 14px;
+    line-height: 140%;
+
+    background: rgba(54, 57, 79, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      color: #FFFFFF;
+      opacity: 0.5;
+    }
+  }
+
+  input[type="text"] {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 20px 140px 20px 20px; 
+
+
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      opacity: 1;
+      font-size: 16px;
+    }
+  }
+
+  .send-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    margin: 0 6px;
+    background: rgba(123, 245, 251, 0.2);
+    border: 1px solid #7BF5FB;
+    backdrop-filter: blur(60px);
+    border-radius: 2px;
+  }
+
+  .shorten {
+    position: absolute;
+    width: 125px;
+    height: 40px;
+    right: 0;
+    top: 7px;
+    color: white;
+    z-index: 90;
+    margin: 0 5px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: linear-gradient(225.13deg, #7BF5FB 1.83%, #4143A8 90.04%);
+    border-radius: 60px;
+  }
+}
