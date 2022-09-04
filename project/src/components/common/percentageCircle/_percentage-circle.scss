@@ -1,0 +1,18 @@
+.circle-wrap {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid rgba(255, 255, 255, 0.13);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+  }
+
+  .circle-wrap .inside-circle {
+	text-align: center;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+  }
+  
