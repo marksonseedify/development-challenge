@@ -11,21 +11,11 @@ exports.createShortUrl = async (req, res) => {
     }
 
     try {
-        // Check if the original URL already has a shortened URL
-        let existingUrl = await Url.findOne({ originalUrl: req.body.originalUrl });
-        if (existingUrl) {
-            return res.json({
-                originalUrl: existingUrl.originalUrl,
-                shortenedUrl: `http://${req.get('host')}/${existingUrl.shortId}`
-            });
-        }
 
         // Generate a unique short id
         let shortId;
-        do {
-            shortId = hash.encode(Date.now().toString());
-            existingUrl = await Url.findOne({ shortId });
-        } while (existingUrl);
+        shortId = hash.encode(Date.now().toString());
+        existingUrl = await Url.findOne({ shortId });
 
         // Create a new document in the database
         const newUrl = new Url({
