@@ -1,0 +1,24 @@
+.hero {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 315px;
+
+  .welcome-text {
+    font-family: "Rajdhani";
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    color: #ffffff;
+    opacity: 0.7;
+  }
+
+  .shortner-text {
+    font-family: "Rajdhani";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: #ffffff;
+  }
+}

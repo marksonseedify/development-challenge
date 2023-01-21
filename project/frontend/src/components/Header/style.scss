@@ -1,85 +1,73 @@
 .hea_der {
-  background-repeat-y: repeat;
-  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  background-repeat-x: no-repeat;
   background-size: 100% 100%;
   position: relative;
-}
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(21px);
+  height: 110px;
+  padding: 0 60px;
 
-.hea_der .container_cust {
-  padding: 0 4px;
-}
+  #language-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    :first-child {
+      font-family: "Rajdhani";
+      font-weight: 600;
+      padding-right: 10px;
+    }
+  }
 
-.container_cust {
-  max-width: 1350px;
-  margin: auto;
-  padding: 0 20px;
-  width: 100%;
-}
+  .language-selector {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    color: white;
+  }
 
-.inner_header {
-  display: grid;
-  grid-template-columns: 198px auto;
-  align-items: center;
-}
+  .container_cust {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+  }
 
-.logo img {
-  max-width: 145px;
-  display: block;
-  padding-left: 15px;
-}
+  .logo {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    max-width: 115px !important;
 
-.logo img {
-  height: 38.5px !important;
-}
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
 
-.navi_gation {
-  text-align: right;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 5px;
-}
+  .navi_gation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+  }
 
-.navi_gation .gen_btn.btn_white {
-  margin-right: 10px;
-  display: none;
-}
+  .nav-item {
+    margin-left: 10px;
+    list-style-type: none;
 
-.btn_white {
-  background: transparent;
-  color: #fff;
-  border: 1px solid transparent;
-}
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
 
-.gen_btn {
-  display: inline-block;
-  padding: 13px 15px;
-  min-width: 226px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  border: 1px solid;
-  cursor: pointer;
-}
-
-nav.navbar.navbar-expand-lg.navbar-light.bg-light {
-  background: transparent !important;
-  justify-content: space-between !important;
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg {
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
