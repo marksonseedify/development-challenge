@@ -10,9 +10,11 @@ const Hero = () => {
             <Container>
                 <Row>
                     <Col xs={12} lg={6}>
-                        <Card widthCard={300} heightCard={85} style={{ alignItems: "flex-start" }}>
-                            <div className="welcome-text">Welcome</div>
-                            <div className="shortner-text">To Our URL Shortener</div>
+                        <Card widthCard={300} heightCard={85}>
+                            <div className="section-hero-title">
+                                <div className="welcome-text">Welcome</div>
+                                <div className="shortner-text">To Our URL Shortener</div>
+                            </div>
                         </Card>
                     </Col>
                 </Row>

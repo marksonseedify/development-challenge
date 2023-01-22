@@ -22,3 +22,11 @@
     color: #ffffff;
   }
 }
+
+.section-hero-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+}

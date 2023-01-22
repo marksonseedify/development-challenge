@@ -1,5 +1,30 @@
 body {
   background: #1e1e1e;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/bg2.svg") no-repeat center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/bg.svg") no-repeat center;
+    background-size: cover;
+    z-index: -2;
+    opacity: 0.5;
+  }
 }
 
 .title {
@@ -18,17 +43,17 @@ body {
 }
 
 .shortner-title {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .original-title {
-    display: flex;
-    align-items: center;
-    text-decoration: underline;
-    
-    :first-child {
-        padding-right: 10px;
-    }
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+
+  :first-child {
+    padding-right: 10px;
+  }
 }
 
 .url-shortened {
@@ -119,7 +144,7 @@ body {
 }
 
 .url-list-content {
-    margin-top: 10px;
+  margin-top: 10px;
 
   h3 {
     font-family: "Rajdhani";
@@ -134,8 +159,8 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
-  color: #7BF5FB;
-  
+  color: #7bf5fb;
+
   img {
     padding: 0 15px;
   }
