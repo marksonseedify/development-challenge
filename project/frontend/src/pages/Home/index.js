@@ -26,7 +26,7 @@ const Home = () => {
         console.log('Error copying to clipboard!');
     });
 
-    const handleShowMore = async () => {
+    const handleShowMore = useCallback(async () => {
         setPage(page + 1);
         try {
             const newUrls = await getAllElements(page + 1);
@@ -34,7 +34,7 @@ const Home = () => {
         } catch (error) {
             console.log(error);
         }
-    }
+    }, [page, urls]);
 
     const onSubmit = useCallback(async (data) => {
         try {
@@ -42,7 +42,7 @@ const Home = () => {
         } catch (error) {
             console.log(error);
         }
-    }, []);;
+    }, []);
 
     useEffect(() => {
         async function fetchUrls() {
@@ -54,7 +54,7 @@ const Home = () => {
             }
         }
         fetchUrls();
-    }, []);
+    }, [urls, page, elementsPerPage, setUrls, setPage, handleShowMore, onSubmit]);
 
     const currentUrls = [...urls.slice(0, page * elementsPerPage), ...urls.slice(page * elementsPerPage, (page + 1) * elementsPerPage)];
 
@@ -135,7 +135,7 @@ const Home = () => {
                                 </Card>
                             </div>
                         ))}
-                        {urls.length === 0 && <div className="load-more d-flex align-items-center justify-content-center mt-4">
+                        {urls.length > 5 && <div className="load-more d-flex align-items-center justify-content-center mt-4">
                             <Image src={LeftTitleDeco} />
                             <div onClick={handleShowMore}>Show more</div>
                             <Image src={RightTitleDeco} />
