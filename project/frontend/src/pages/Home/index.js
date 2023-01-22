@@ -61,7 +61,7 @@ const Home = () => {
                         </Col>
                         <Col xs={12} lg={4}>
                             <Card widthCard={330} heightCard={225}>
-                                <div className="content">
+                                <div className="content d-flex flex-column">
                                     <div className="title">URLs Shortened <Image src={InfoIcon} color="gray" /></div>
                                     < hr />
                                     <div className="content-percent">
@@ -93,9 +93,8 @@ const Home = () => {
                     <div className="url-list-content">
                         <h3>URLs Shortened</h3>
                         <Card widthCard={"100%"} heightCard={110}>
-                            <div className="url-shortened">
+                            <div className="url-shortened d-flex align-items-center">
                                 <div className="shortner-title">https://sd.fy/xxxxx</div>
-
                                 <div className="original-title">
                                     <Image src={HrefIcon} />
                                     Full Link: https://somelongwebsite.com/slashsomething

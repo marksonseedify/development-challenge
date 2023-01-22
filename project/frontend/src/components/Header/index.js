@@ -17,7 +17,7 @@ const Header = () => {
             <Navbar.Brand href="https://seedify.fund/">
                 <Image src={SeedifyLogo} alt="" className="logo" />
             </Navbar.Brand>
-            <Nav className="ml-auto navi_gation">
+            <Nav className="ml-auto navi_gation d-flex align-items-center justify-content-center">
                 <DropdownButton
                     id="language-dropdown"
                     variant="transparent"
