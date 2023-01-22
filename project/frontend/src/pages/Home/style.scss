@@ -49,174 +49,165 @@ body {
 .original-title {
   display: flex;
   align-items: center;
+  width: 400px;
+  text-align: left;
 
   :first-child {
     padding-right: 10px;
   }
 }
 
-  .url-shortened {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .warning-info {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 120%;
-    padding: 5px;
-    font-family: "Rajdhani";
-  }
-
-  .content {
-    width: 100%;
-
-    input {
-      width: 100%;
-    }
-
-    hr {
-      opacity: 0.1;
-      border: 1px solid #ffffff;
-      width: 100%;
-    }
-  // }
-
-.content-percent {
-  width: 100%;
+.url-shortened {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.warning-info {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  padding: 5px;
+  font-family: "Rajdhani";
+}
+
+.content {
+  width: 100%;
+
+  input {
+    width: 100%;
+  }
 
   hr {
     opacity: 0.1;
     border: 1px solid #ffffff;
     width: 100%;
   }
-}
+  // }
 
-.input-field {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 60px;
-  background: transparent;
-  outline: none;
-  width: 100%;
-  height: 55px;
-}
+  .content-percent {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-.input-button {
-  width: 150px;
-  height: 40px;
-  background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
-  border-radius: 60px;
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  margin-right: 8px;
-  font-family: "Rajdhani";
-}
+    hr {
+      opacity: 0.1;
+      border: 1px solid #ffffff;
+      width: 100%;
+    }
+  }
 
-.input-container {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(21px);
-  border-radius: 60px;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
+  .input-field {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 60px;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 55px;
+  }
 
-.content-form {
-  padding: 15px;
-}
-
-.percent-title {
-  font-weight: 800;
-  font-size: 56px;
-  line-height: 70px;
-  font-family: "Rajdhani";
-}
-
-.url-list-content {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  h3 {
+  .input-button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
+    border-radius: 60px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
     font-family: "Rajdhani";
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 31px;
   }
-}
 
-.load-more {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3rem;
-  color: #7bf5fb;
-
-  img {
-    padding: 0 15px;
+  .input-container {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(21px);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
   }
-}
 
-.input-button {
-  width: 150px;
-  height: 40px;
-  background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
-  border-radius: 60px;
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  margin-right: 8px;
-}
+  .content-form {
+    padding: 15px;
+  }
 
-.input-container {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(21px);
-  border-radius: 60px;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  align-items: center;
-  border-image: linear-gradient(360deg, at 50% 50%, #ffffff 50%, #ffffff 50%) 1;
-  color: white;
-}
+  .percent-title {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 70px;
+    font-family: "Rajdhani";
+  }
 
-// .input-container::before,
-// .input-container::after {
-//   content: "";
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 60px;
-//   opacity: 0.2;
-// }
+  .url-list-content {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
-// .input-container::before {
-//   top: 0;
-//   left: 0;
-//   border: 2px solid;
-// }
+    h3 {
+      font-family: "Rajdhani";
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
 
-// .input-container::after {
-//   // content: "";
-//   position: absolute;
-//   bottom: 0;
-//   right: 0;
-//   width: 0;
-//   height: 0;
-//   border: 2px solid;
-//   border-image: linear-gradient(360deg, at 50% 50%, #ffffff 50%, #ffffff 50%) 1
-//     50%;
+  .load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    color: #7bf5fb;
+    cursor: pointer;
+
+    img {
+      padding: 0 15px;
+    }
+  }
+
+  .button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
+    border-radius: 60px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+    font-family: "Rajdhani";
+  }
+
+  .input-button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
+    border-radius: 60px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .input-container {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(21px);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    border-image: linear-gradient(360deg, at 50% 50%, #ffffff 50%, #ffffff 50%)
+      1;
+    color: white;
+  }
 }

@@ -36,6 +36,21 @@ exports.createShortUrl = async (req, res) => {
     }
 };
 
+exports.getAllElements = async (req, res) => {
+    try {
+        // Find the URL with the given short id
+        const url = await Url.find().lean();
+        if (!url) {
+            return res.status(404).json({ error: 'URL not found' });
+        }
+        return res.json(url);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: 'Error while retrieving the URLs' });
+    }
+};
+
 exports.getOriginalUrl = async (req, res) => {
     try {
         // Find the URL with the given short id
