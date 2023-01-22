@@ -1,42 +1,36 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col, Image, Form } from 'react-bootstrap';
 import Card from '../../components/UI/card';
-import Input from '../../components/UI/input';
 import Button from '../../components/UI/button';
 import Hero from '../../components/Hero';
 import Footer from '../../components/Footer';
 import { shortenUrl } from '../../services/urlService';
 import { Graph, InfoIcon, HrefIcon, LeftTitleDeco, RightTitleDeco } from '../../assets/images';
+import { useForm } from 'react-hook-form';
 import './style.scss';
 
 const Home = () => {
 
-    const [url, setUrl] = useState('');
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = data => console.log(data);
 
-    const handleURLSubmit = async () => {
-        console.log('handleURLSubmit function called');
-        try {
-            const shortenedUrl = await shortenUrl(url);
-            setUrl(shortenedUrl);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    console.log(watch("example"));
 
+    // const onSubmit = async (data) => {
+    //     console.log(data)
+    //     try {
+    //         const shortened = await shortenUrl(data.originalUrl);
+    //         setShortenedUrl(shortened);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
-    const handleValue = (e) => {
-        console.log(e)
-    }
-
-    const handleURLChange = (e) => {
-        console.log(e)
-        e.preventDefault();
-        setUrl(e.target.value);
-    }
 
     const handleURLCopy = () => {
         console.log('URL Submitted');
+        // navigator.clipboard.writeText(shortenedUrl);
     }
 
     return (
@@ -50,12 +44,19 @@ const Home = () => {
                             <Card widthCard={500} heightCard={225}>
                                 <div className="content">
                                     <div className="title">Shorten URL</div>
-                                    < hr />
-                                    <div className="content-form">
-                                        <Input
-                                            placeholder="Type a URL to shorten..."
-                                        />
-                                    </div>
+                                    <hr />
+                                    <Form onSubmit={handleSubmit(onSubmit)} className="content-form">
+                                        <Form.Group className="mb-3" controlId="formShortenURL">
+                                            <div className='input-container'>
+                                                <Form.Control
+                                                    {...register("originalUrl", { required: true })}
+                                                    className='input-field'
+                                                    type="text"
+                                                    placeholder="Type a URL to shorten..." />
+                                                <Button type="submit">Shorten</Button>
+                                            </div>
+                                        </Form.Group>
+                                    </Form>
                                 </div>
                             </Card>
                         </Col>

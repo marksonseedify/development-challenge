@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Image, ListGroup } from 'react-bootstrap';
 import { FacebookIconFooter, LogoFooter, SendIcon, DiscordIconFooter, TwitterIconFooter, TelegramIconFooter } from '../../assets/images';
-import InputNews from '../../components/UI/inputNews';
 import './style.scss';
 
 const Footer = () => {
@@ -17,7 +16,7 @@ const Footer = () => {
                             </p>
                         </div>
                     </Col>
-                    <Col md={4} classNam="mt-5">
+                    <Col md={4} className="mt-5">
                         <h5 >Company</h5>
                         <ListGroup className="list-footer-links">
                             <div className="list-footer-column">
@@ -34,10 +33,12 @@ const Footer = () => {
                         <div className="update-section">
                             <h5>Never Miss Updates</h5>
                             <div className="form-group">
-                                <InputNews
-                                    placeholder="Enter your mail address"
-                                    imgSrc={SendIcon}
-                                />
+                                <div className="mt-3">
+                                    <div className='input-container-news'>
+                                        <input className='input-field' placeholder={"Enter your mail address"} />
+                                        <Image src={SendIcon} />
+                                    </div>
+                                </div>
                             </div>
                             <div className="mt-4">
                                 <h5>Follow us on</h5>
