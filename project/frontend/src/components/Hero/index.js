@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import HeroBackground from "../../assets/images/hero-background.png";
 import Card from "../UI/card/";
-import Input from "../UI/input/";
 import "./style.scss";
 
 const Hero = () => {

@@ -1,0 +1,128 @@
+.footer {
+    margin-top: 30vh;
+
+    h5 {
+        font-family: "Rajdhani";
+        font-weight: 600;
+    }
+}
+
+.container_cust {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    .footer-logo-image {
+      width: 25%;
+      padding: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .footer-middle {
+      width: 25%;
+      padding: 10px;
+
+      .footer-lft {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin-bottom: 10px;
+            a {
+              color: #fff;
+              font-size: 14px;
+              text-decoration: none;
+            }
+          }
+        }
+
+        .footer-social-tab {
+          margin-top: 20px;
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              margin-right: 10px;
+              a {
+                color: #fff;
+                font-size: 18px;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-right {
+      width: 25%;
+      padding: 10px;
+
+      .footer-socials {
+        a {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+.update-section {
+
+}
+
+.footer-logo p {
+  font-family: "Rajdhani";
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+.list-footer-links {
+  background: transparent;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.list-footer-links-items {
+  background: transparent;
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+  display: flex-;
+  justify-content: flex-start;
+  padding: 0 20px 10px 0;
+}
+
+.list-footer-column {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 250px;
+}
