@@ -124,10 +124,12 @@ const Home = () => {
                                 <Card widthCard={"100%"} heightCard={110}>
                                     <div className="url-shortened d-flex align-items-center">
                                         <>
-                                            <div className="shortner-title">{backendApi + shortId}</div>
+                                            <div className="shortner-title">
+                                                <a href={backendApi + shortId} target="_blank" rel="noopener noreferrer" > {backendApi + shortId} </a>
+                                            </div>
                                             <div className="original-title">
                                                 <Image src={HrefIcon} />
-                                                Full Link: {originalUrl}
+                                                Full Link: <a href={originalUrl} target="_blank" rel="noopener noreferrer" >{originalUrl} </a>
                                             </div>
                                             <Button id="CopyButton" className="button" data-clipboard-text={backendApi + shortId}>Copy</Button>
                                         </>

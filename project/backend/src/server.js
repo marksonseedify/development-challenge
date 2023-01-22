@@ -12,8 +12,7 @@ app.use(cors({
 }));
 
 app.use(bodyParser.json());
-app.use('/api/links/', routesLinks);
-
+app.use('/', routesLinks);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
