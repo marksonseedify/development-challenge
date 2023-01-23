@@ -44,6 +44,11 @@ body {
 
 .shortner-title {
   text-decoration: underline;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .original-title {
@@ -51,6 +56,11 @@ body {
   align-items: center;
   width: 400px;
   text-align: left;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
   :first-child {
     padding-right: 10px;

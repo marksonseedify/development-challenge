@@ -21,11 +21,11 @@ const Header = () => {
                 <DropdownButton
                     id="language-dropdown"
                     variant="transparent"
-                    title={<LanguageSelector />}
+                    title={<LanguageSelector/>}
                 >
-                    <Dropdown.Item eventKey="1">EN</Dropdown.Item>
-                    <Dropdown.Item eventKey="2">ES</Dropdown.Item>
-                    <Dropdown.Item eventKey="3">PT</Dropdown.Item>
+                    <Dropdown.Item key="1" eventKey="1">EN</Dropdown.Item>
+                    <Dropdown.Item key="2" eventKey="2">ES</Dropdown.Item>
+                    <Dropdown.Item key="3" eventKey="3">PT</Dropdown.Item>
                 </DropdownButton>
                 <Nav.Link href="https://twitter.com/SeedifyFund" target="_blank" rel="noopener noreferrer">
                     <Image src={TwitterIcon} alt="Twitter" className="social-icon" />

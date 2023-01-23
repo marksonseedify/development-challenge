@@ -1,5 +1,6 @@
 const Url = require('../models/urls');
 const hash = require('../utils/hash');
+const { validateUrl } = require('../utils/validateUrl');
 
 exports.createShortUrl = async (req, res) => {
     // Validate the original URL
@@ -10,12 +11,16 @@ exports.createShortUrl = async (req, res) => {
         return res.status(400).json({ error: 'originalUrl is not a valid URL' });
     }
 
+    const isOriginalValidUrl = await validateUrl(req.body.originalUrl);
+    if (!isOriginalValidUrl) {
+        return res.status(400).json({ error: 'originalUrl is not a valid and working URL' });
+    }
+
     try {
 
         // Generate a unique short id
         let shortId;
         shortId = hash.encode(Date.now().toString());
-        existingUrl = await Url.findOne({ shortId });
 
         // Create a new document in the database
         const newUrl = new Url({
@@ -23,6 +28,7 @@ exports.createShortUrl = async (req, res) => {
             shortId: shortId,
             accessCount: 0
         });
+
         await newUrl.save();
 
         // Return the original and shortened URLs

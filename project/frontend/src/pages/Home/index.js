@@ -120,7 +120,7 @@ const Home = () => {
                         <h3>URLs Shortened</h3>
                         <div className="text-center">{currentUrls.length === 0 && <div className="no-urls">No URLs shortened yet</div>}</div>
                         {currentUrls.map(({ originalUrl, shortId }) => (
-                            <div className="mt-4">
+                            <div key={shortId} className="mt-4">
                                 <Card widthCard={"100%"} heightCard={110}>
                                     <div className="url-shortened d-flex align-items-center">
                                         <>
@@ -129,7 +129,7 @@ const Home = () => {
                                             </div>
                                             <div className="original-title">
                                                 <Image src={HrefIcon} />
-                                                Full Link: <a href={originalUrl} target="_blank" rel="noopener noreferrer" >{originalUrl} </a>
+                                                <a href={originalUrl} target="_blank" rel="noopener noreferrer" >{originalUrl} </a>
                                             </div>
                                             <Button id="CopyButton" className="button" data-clipboard-text={backendApi + shortId}>Copy</Button>
                                         </>

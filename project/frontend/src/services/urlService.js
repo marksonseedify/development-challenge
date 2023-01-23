@@ -7,7 +7,7 @@ const instance = axios.create({
 
 export const getAllElements = async (page = 0) => {
     try {
-        const { data } = await instance.get(`/links/getAllElements?page=${page}`);
+        const { data } = await instance.get(`/getAllElements?page=${page}`);
         return data;
     } catch (error) {
         console.log(error);
@@ -17,7 +17,7 @@ export const getAllElements = async (page = 0) => {
 
 export const shortenUrl = async (url) => {
     try {
-        const { data } = await instance.post('/links/shorten', { originalUrl: url });
+        const { data } = await instance.post('/shorten', { originalUrl: url });
         return data;
     } catch (error) {
         console.log(error);
@@ -27,7 +27,7 @@ export const shortenUrl = async (url) => {
 
 export const getOriginalUrl = async (id) => {
     try {
-        const { data } = await instance.get(`/links/${id}`);
+        const { data } = await instance.get(`/${id}`);
         return data;
     } catch (error) {
         console.log(error);
