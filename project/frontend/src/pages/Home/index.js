@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import { shortenUrl, getAllElements } from '../../services/urlService';
 import { backendApi } from '../../services/url';
 import { Graph, InfoIcon, HrefIcon, LeftTitleDeco, RightTitleDeco } from '../../assets/images';
+import { ToastContainer, toast } from 'react-toastify';
 import Clipboard from 'clipboard';
 import { useForm } from 'react-hook-form';
 import './style.scss';
@@ -18,12 +19,12 @@ const Home = () => {
     const [page, setPage] = useState(0);
     const elementsPerPage = 5;
 
-    clipboard.on('success', function (e) {
-        console.log('Copied to clipboard!');
+    clipboard.on('success', function () {
+        toast.success("Shortened URL Copied to clipboard!");
     });
 
     clipboard.on('error', function (e) {
-        console.log('Error copying to clipboard!');
+        toast.error("Error Copying Shortened URL to clipboard!");
     });
 
     const handleShowMore = useCallback(async () => {
@@ -34,12 +35,14 @@ const Home = () => {
         } catch (error) {
             console.log(error);
         }
-    }, [page, urls]);
+    }, [page, urls, setUrls]);
 
     const onSubmit = useCallback(async (data) => {
         try {
             await shortenUrl(data.originalUrl);
+            toast.success("Shortened URL created successfully!");
         } catch (error) {
+            toast.error("An error occurred while trying to shorten the URL, please try again.");
             console.log(error);
         }
     }, []);
@@ -54,12 +57,13 @@ const Home = () => {
             }
         }
         fetchUrls();
-    }, [urls, page, elementsPerPage, setUrls, setPage, handleShowMore, onSubmit]);
+    }, []);
 
     const currentUrls = [...urls.slice(0, page * elementsPerPage), ...urls.slice(page * elementsPerPage, (page + 1) * elementsPerPage)];
 
     return (
         <main>
+            <ToastContainer />
             <Header />
             <section>
                 <Hero />

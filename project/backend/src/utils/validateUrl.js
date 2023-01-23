@@ -2,11 +2,15 @@ const axios = require('axios');
 
 const validateUrl = async (url) => {
     try {
-        const { status } = await axios.get(url);
-        return status === 200;
+        await axios.get(url);
+        return true;
     } catch (error) {
+        console.log(error)
         return false;
     }
 }
 
-module.exports = { validateUrl };
+
+module.exports = {
+    validateUrl
+};

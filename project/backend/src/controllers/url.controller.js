@@ -12,6 +12,8 @@ exports.createShortUrl = async (req, res) => {
     }
 
     const isOriginalValidUrl = await validateUrl(req.body.originalUrl);
+    console.log("isOriginalValidUrl", isOriginalValidUrl)
+
     if (!isOriginalValidUrl) {
         return res.status(400).json({ error: 'originalUrl is not a valid and working URL' });
     }
