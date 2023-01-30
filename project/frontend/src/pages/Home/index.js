@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import Header from '../../components/Header';
 import { Container, Row, Col, Image, Form, Button } from 'react-bootstrap';
 import Card from '../../components/UI/card';
@@ -8,24 +8,16 @@ import { shortenUrl, getAllElements } from '../../services/urlService';
 import { backendApi } from '../../services/url';
 import { Graph, InfoIcon, HrefIcon, LeftTitleDeco, RightTitleDeco } from '../../assets/images';
 import { ToastContainer, toast } from 'react-toastify';
-import Clipboard from 'clipboard';
 import { useForm } from 'react-hook-form';
+import copy from 'clipboard-copy';
 import './style.scss';
 
 const Home = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const clipboard = new Clipboard('#CopyButton');
     const [urls, setUrls] = useState([]);
     const [page, setPage] = useState(0);
     const elementsPerPage = 5;
-
-    clipboard.on('success', function () {
-        toast.success("Shortened URL Copied to clipboard!");
-    });
-
-    clipboard.on('error', function (e) {
-        toast.error("Error Copying Shortened URL to clipboard!");
-    });
+    const copyButtonRef = useRef(null);
 
     const handleShowMore = useCallback(async () => {
         setPage(page + 1);
@@ -57,7 +49,16 @@ const Home = () => {
             }
         }
         fetchUrls();
-    }, []);
+    }, [urls]);
+
+    const getElementValue = (e) => {
+        e.preventDefault();
+        try {
+            copy(copyButtonRef.current.href)
+        } catch (er) {
+            console.log(er)
+        }
+    };
 
     const currentUrls = [...urls.slice(0, page * elementsPerPage), ...urls.slice(page * elementsPerPage, (page + 1) * elementsPerPage)];
 
@@ -124,22 +125,31 @@ const Home = () => {
                         <h3>URLs Shortened</h3>
                         <div className="text-center">{currentUrls.length === 0 && <div className="no-urls">No URLs shortened yet</div>}</div>
                         {currentUrls.map(({ originalUrl, shortId }) => (
-                            <div key={shortId} className="mt-4">
+                            <form key={shortId} className="mt-4">
                                 <Card widthCard={"100%"} heightCard={110}>
                                     <div className="url-shortened d-flex align-items-center">
                                         <>
                                             <div className="shortner-title">
-                                                <a href={backendApi + shortId} target="_blank" rel="noopener noreferrer" > {backendApi + shortId} </a>
+                                                <a id="_copyText" href={backendApi + shortId}
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    ref={copyButtonRef}>
+                                                    {backendApi + shortId}
+                                                </a>
                                             </div>
                                             <div className="original-title">
                                                 <Image src={HrefIcon} />
-                                                <a href={originalUrl} target="_blank" rel="noopener noreferrer" >{originalUrl} </a>
+                                                <a href={originalUrl} target="_blank" rel="noopener noreferrer">
+                                                    {originalUrl.length > 50
+                                                        ? originalUrl.substring(0, 48) + '...' + originalUrl.substring(originalUrl.length - 5)
+                                                        : originalUrl
+                                                    }
+                                                </a>
                                             </div>
-                                            <Button id="CopyButton" className="button" data-clipboard-text={backendApi + shortId}>Copy</Button>
+                                            <Button onClick={getElementValue} className="button">Copy</Button>
                                         </>
                                     </div>
                                 </Card>
-                            </div>
+                            </form>
                         ))}
                         {urls.length > 5 && <div className="load-more d-flex align-items-center justify-content-center mt-4">
                             <Image src={LeftTitleDeco} />
