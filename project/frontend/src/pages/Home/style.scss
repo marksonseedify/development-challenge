@@ -1,0 +1,228 @@
+body {
+  background: #1e1e1e;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/bg2.svg") no-repeat center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/bg.svg") no-repeat center;
+    background-size: cover;
+    z-index: -2;
+    opacity: 0.5;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  font-family: "Rajdhani";
+  line-height: 26px;
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+
+  :first-child {
+    padding-left: 10px;
+  }
+}
+
+.shortner-title {
+  text-decoration: underline;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.original-title {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  text-align: left;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  :first-child {
+    padding-right: 10px;
+  }
+}
+
+.url-shortened {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.warning-info {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 120%;
+  padding: 5px;
+  font-family: "Rajdhani";
+}
+
+.content {
+  width: 100%;
+
+  input {
+    width: 100%;
+  }
+
+  hr {
+    opacity: 0.1;
+    border: 1px solid #ffffff;
+    width: 100%;
+  }
+  // }
+
+  .content-percent {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    hr {
+      opacity: 0.1;
+      border: 1px solid #ffffff;
+      width: 100%;
+    }
+  }
+
+  .input-field {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 60px;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    height: 55px;
+    color: white;
+  }
+
+  .input-button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
+    border-radius: 60px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+    font-family: "Rajdhani";
+  }
+
+  .input-container {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(21px);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .content-form {
+    padding: 15px;
+  }
+
+  .percent-title {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 70px;
+    font-family: "Rajdhani";
+  }
+
+  .url-list-content {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    h3 {
+      font-family: "Rajdhani";
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+
+  .load-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    color: #7bf5fb;
+    cursor: pointer;
+
+    img {
+      padding: 0 15px;
+    }
+  }
+
+  .button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
+    border-radius: 60px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+    font-family: "Rajdhani";
+  }
+
+  .input-button {
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(225.13deg, #7bf5fb 1.83%, #4143a8 90.04%);
+    border-radius: 60px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .input-container {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(21px);
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    border-image: linear-gradient(360deg, at 50% 50%, #ffffff 50%, #ffffff 50%)
+      1;
+    color: white;
+  }
+
+  #formShortenURL {
+
+  }
+}
